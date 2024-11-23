@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Place Student</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f9; margin: 0; padding: 0; }
+        .container { width: 50%; margin: 0 auto; padding: 20px; background-color: #fff; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); margin-top: 50px; }
+        h1 { text-align: center; color: #333; }
+        .form-group { margin-bottom: 15px; }
+        label { font-weight: bold; }
+        input[type="text"] { width: 100%; padding: 8px; box-sizing: border-box; }
+        button { padding: 10px 15px; color: #fff; background-color: #4CAF50; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background-color: #45a049; }
+        .application-details { margin-top: 20px; }
+        .application-details p { margin: 5px 0; font-size: 16px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Place a Student</h1>
+        <a href="{{ url_for('home')}}" class="button">Home</a>
+        <a href="{{ url_for('view_placed_students') }}">View Placed Students</a>
+        <br>
+        <hr>
+        <br>
+        <form method="post" action="/place_student">
+            <div class="form-group">
+                <label for="application_id">Enter Application ID:</label>
+                <input type="text" id="application_id" name="application_id" required>
+            </div>
+            <button type="submit">Fetch Details</button>
+        </form>
+        
+        {% if application %}
+        <div class="application-details">
+            <h2>Application Details</h2>
+            <p><strong>Application ID:</strong> {{ application.APPLICATION_ID}}</p>
+            <p><strong>Student ID:</strong> {{ application.STUDENT_ID }}</p>
+            <p><strong>Job ID:</strong> {{ application.JOB_ID }}</p>
+            <p><strong>Status:</strong> {{ application.STATUS }}</p>
+            <form method="post" action="/confirm_placement">
+                <input type="hidden" name="application_id" value="{{ application.APPLICATION_ID }}">
+                <button type="submit">Confirm Placement</button>
+            </form>
+        </div>
+        {% elif error %}
+        <p style="color: red;">{{ error }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>

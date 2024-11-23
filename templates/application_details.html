@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>All Applications Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .button {
+            display: inline-block;
+            margin-bottom: 15px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            font-size: 16px;
+        }
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+            color: #333;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        td {
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>All Applications Details</h2>
+        <a href="{{ url_for('home')}}" class="button">Home</a>
+
+        <table>
+            <tr>
+                <th>Application ID</th>
+                <th>Student Name</th>
+                <th>Job Title</th>
+                <th>Company Name</th>
+                <th>Interview Date</th>
+                <th>Interview Status</th>
+                <th>Interview Location</th>
+            </tr>
+            {% for application in applications %}
+            <tr>
+                <td>{{ application.application_id }}</td>
+                <td>{{ application.student_name }}</td>
+                <td>{{ application.job_title }}</td>
+                <td>{{ application.company_name }}</td>
+                <td>{{ application.scheduled_date if application.scheduled_date else 'Not Scheduled' }}</td>
+                <td>{{ application.interview_status if application.interview_status else 'Not Scheduled' }}</td>
+                <td>{{ application.location if application.location else 'N/A' }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>

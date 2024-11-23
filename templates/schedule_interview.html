@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Schedule Interview</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .container {
+            width: 50%;
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .button {
+            display: inline-block;
+            margin-bottom: 15px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+        form {
+            margin-top: 20px;
+        }
+        label {
+            font-size: 16px;
+            margin-top: 10px;
+            color: #555;
+        }
+        input[type="text"],
+        input[type="date"],
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 8px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        input[type="text"]:focus,
+        input[type="date"]:focus {
+            border-color: #4CAF50;
+            outline: none;
+            box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .link {
+            display: inline-block;
+            margin-bottom: 10px;
+            color: #4CAF50;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Schedule Interview</h2>
+        <a href="{{ url_for('home') }}" class="button">Home</a>
+        <br><br>
+        <a href="{{ url_for('view_all_applications', application_id=1) }}" class="link">View Application and Interview Details</a>
+        
+        <hr><br>
+        
+        <form method="POST" action="{{ url_for('schedule_interview') }}">
+            <label for="application_id">Application ID:</label>
+            <input type="text" id="application_id" name="application_id" required>
+
+            <label for="interview_id">Interview ID (e.g., I010, I011):</label>
+            <input type="text" id="interview_id" name="interview_id" required>
+
+            <label for="scheduled_date">Interview Date:</label>
+            <input type="date" id="scheduled_date" name="scheduled_date" required>
+
+            <label for="status">Interview Status:</label>
+            <input type="text" id="status" name="status" required>
+
+            <label for="location">Interview Location:</label>
+            <input type="text" id="location" name="location" required>
+
+            <button type="submit">Schedule Interview</button>
+        </form>
+    </div>
+</body>
+</html>

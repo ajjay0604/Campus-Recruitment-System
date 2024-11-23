@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Placed Students</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f9; }
+        .container { width: 80%; margin: 0 auto; padding: 20px; }
+        h1 { color: #333; text-align: center; }
+        table { width: 100%; margin-top: 20px; border-collapse: collapse; }
+        th, td { padding: 10px; text-align: left; border: 1px solid #ddd; }
+        th { background-color: #4CAF50; color: white; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Placed Students</h1>
+        <a href="{{ url_for('home')}}" class="button">Home</a>
+        <a href="/place_student">Place a Student</a>
+        <br><hr>
+        <br>
+        <table>
+            <tr>
+                <th>Student ID</th>
+                <th>Name</th>
+                <th>Job Title</th>
+                <th>Company</th>
+                <th>Salary</th>
+            </tr>
+            {% for student in students %}
+            <tr>
+                <td>{{ student.student_id }}</td>
+                <td>{{ student.name }}</td>
+                <td>{{ student.job_title }}</td>
+                <td>{{ student.company_name }}</td>
+                <td>{{ "{:.2f}".format(student.salary) }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Add Student</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f9; }
+        .container { width: 50%; margin: 0 auto; padding: 20px; background-color: #fff; border-radius: 5px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
+        h1 { color: #333; text-align: center; }
+        input[type="text"], input[type="number"], input[type="submit"] {
+            width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 4px;
+        }
+        input[type="submit"] { background-color: #4CAF50; color: white; cursor: pointer; }
+        input[type="submit"]:hover { background-color: #45a049; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Add New Student</h1>
+        <a href="{{ url_for('home')}}" class="button">Home</a>
+        <br><br><hr><br>
+        <form method="POST">
+            <label for="student_id">Student ID (Example : S010,S011)</label><br>
+            <input type="text" id="student_id" name="student_id" required><br>
+            <label for="name">Name</label><br>
+            <input type="text" id="name" name="name" required><br>
+            <label for="age">Age</label><br>
+            <input type="number" id="age" name="age" required><br>
+            <label for="degree">Degree</label><br>
+            <input type="text" id="degree" name="degree" required><br>
+            <label for="branch">Branch</label><br>
+            <input type="text" id="branch" name="branch" required><br>
+            <input type="submit" value="Add Student">
+        </form>
+    </div>
+</body>
+</html>

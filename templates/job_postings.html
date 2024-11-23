@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Job Postings</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f9; }
+        .container { width: 80%; margin: 0 auto; padding: 20px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { padding: 10px; text-align: left; border: 1px solid #ddd; }
+        th { background-color: #4CAF50; color: white; }
+        tr:nth-child(even) { background-color: #f2f2f2; }
+        h1 { color: #333; }
+        .button { padding: 10px 20px; background-color: #4CAF50; color: white; border: none; cursor: pointer; }
+        .button:hover { background-color: #45a049; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Job Postings</h1>
+        <a href="{{ url_for('home')}}" class="button">Home</a>
+        <a href="/add_job_posting" class="button">Add New Job Posting</a>
+        <table>
+            <thead>
+                <tr>
+                    <th>Job ID</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Salary</th>
+                    <th>Company ID</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for job in job_postings %}
+                <tr>
+                    <td>{{ job.JOB_ID }}</td>
+                    <td>{{ job.TITLE }}</td>
+                    <td>{{ job.DESCRIPTION }}</td>
+                    <td>{{ job.SALARY }}</td>
+                    <td>{{ job.COMPANY_ID }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

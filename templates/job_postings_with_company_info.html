@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Job Postings with Company Info</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f9; margin: 0; padding: 20px; }
+        .container { width: 80%; margin: 0 auto; }
+        h1 { text-align: center; color: #333; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        table, th, td { border: 1px solid #ccc; }
+        th, td { padding: 10px; text-align: left; }
+        th { background-color: #4CAF50; color: white; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+        tr:hover { background-color: #f1f1f1; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Job Postings with Company Info</h1>
+        <a href="{{ url_for('home')}}" class="button">Home</a>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>JOB ID</th>
+                    <th>TITLE</th>
+                    <th>DESCRIPTION</th>
+                    <th>COMPANY NAME</th>
+                    <th>LOCATION</th>
+                    <th>SECTOR</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for job in job_postings %}
+                <tr>
+                    <td>{{ job.job_id }}</td>
+                    <td>{{ job.title}}</td>
+                    <td>{{ job.description }}</td>
+                    <td>{{ job.company_name }}</td>
+                    <td>{{ job.location }}</td>
+                    <td>{{ job.sector }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

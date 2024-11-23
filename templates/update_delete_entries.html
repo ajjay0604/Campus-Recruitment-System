@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update or Delete Entries</title>
+</head>
+<body>
+    <h1>Update or Delete Entries</h1>
+
+    <!-- Action Filter -->
+    <form method="POST" action="{{ url_for('update_delete_entries') }}">
+        <label for="action">Select Action:</label>
+        <select name="action" required>
+            <option value="Update">Update</option>
+            <option value="Delete">Delete</option>
+        </select>
+
+        <label for="table">Select Table:</label>
+        <select name="table" required>
+            <option value="student">Student</option>
+            <option value="company">Company</option>
+            <option value="application">Application</option>
+            <option value="interview">Interview</option>
+            <option value="job_posting">Job Posting</option>
+        </select>
+
+        <button type="submit">Filter</button>
+    </form>
+
+    <hr>
+
+    <!-- Display Students -->
+    {% if students %}
+        <h2>Students</h2>
+        {% for student in students %}
+            <form method="POST" action="{{ url_for('update_delete_entries') }}">
+                <input type="hidden" name="table" value="student">
+                <input type="hidden" name="entry_id" value="{{ student.student_id }}">
+                
+                <label>Student ID:</label>
+                <input type="text" name="student_id" value="{{ student.student_id }}" readonly>
+
+                <label>Name:</label>
+                <input type="text" name="name" value="{{ student.name }}">
+
+                <label>Age:</label>
+                <input type="text" name="age" value="{{ student.age }}">
+
+                <label>Degree:</label>
+                <input type="text" name="degree" value="{{ student.degree }}">
+
+                <label>Branch:</label>
+                <input type="text" name="branch" value="{{ student.branch }}">
+
+                <button type="submit">Submit</button>
+            </form>
+            <hr>
+        {% endfor %}
+    {% endif %}
+
+    <!-- Display Companies -->
+    {% if companies %}
+        <h2>Companies</h2>
+        {% for company in companies %}
+            <form method="POST" action="{{ url_for('update_delete_entries') }}">
+                <input type="hidden" name="table" value="company">
+                <input type="hidden" name="entry_id" value="{{ company.company_id }}">
+
+                <label>Company ID:</label>
+                <input type="text" name="company_id" value="{{ company.company_id }}" readonly>
+
+                <label>Name:</label>
+                <input type="text" name="name" value="{{ company.name }}">
+
+                <label>Location:</label>
+                <input type="text" name="location" value="{{ company.location }}">
+
+                <label>Sector:</label>
+                <input type="text" name="sector" value="{{ company.sector }}">
+
+                <button type="submit">Submit</button>
+            </form>
+            <hr>
+        {% endfor %}
+    {% endif %}
+
+    <!-- Display Applications -->
+    {% if applications %}
+        <h2>Applications</h2>
+        {% for application in applications %}
+            <form method="POST" action="{{ url_for('update_delete_entries') }}">
+                <input type="hidden" name="table" value="application">
+                <input type="hidden" name="entry_id" value="{{ application.application_id }}">
+
+                <label>Application ID:</label>
+                <input type="text" name="application_id" value="{{ application.application_id }}" readonly>
+
+                <label>Student ID:</label>
+                <input type="text" name="student_id" value="{{ application.student_id }}">
+
+                <label>Job ID:</label>
+                <input type="text" name="job_id" value="{{ application.job_id }}">
+
+                <label>Status:</label>
+                <input type="text" name="status" value="{{ application.status }}">
+
+                <button type="submit">Submit</button>
+            </form>
+            <hr>
+        {% endfor %}
+    {% endif %}
+
+    <!-- Display Interviews -->
+    {% if interviews %}
+        <h2>Interviews</h2>
+        {% for interview in interviews %}
+            <form method="POST" action="{{ url_for('update_delete_entries') }}">
+                <input type="hidden" name="table" value="interview">
+                <input type="hidden" name="entry_id" value="{{ interview.interview_id }}">
+
+                <label>Interview ID:</label>
+                <input type="text" name="interview_id" value="{{ interview.interview_id }}" readonly>
+
+                <label>Application ID:</label>
+                <input type="text" name="application_id" value="{{ interview.application_id }}">
+
+                <label>Scheduled Date:</label>
+                <input type="date" name="scheduled_date" value="{{ interview.scheduled_date }}">
+
+                <label>Status:</label>
+                <input type="text" name="status" value="{{ interview.status }}">
+
+                <label>Location:</label>
+                <input type="text" name="location" value="{{ interview.location }}">
+
+                <button type="submit">Submit</button>
+            </form>
+            <hr>
+        {% endfor %}
+    {% endif %}
+
+    <!-- Display Job Postings -->
+    {% if job_postings %}
+        <h2>Job Postings</h2>
+        {% for job in job_postings %}
+            <form method="POST" action="{{ url_for('update_delete_entries') }}">
+                <input type="hidden" name="table" value="job_posting">
+                <input type="hidden" name="entry_id" value="{{ job.job_id }}">
+
+                <label>Job ID:</label>
+                <input type="text" name="job_id" value="{{ job.job_id }}" readonly>
+
+                <label>Title:</label>
+                <input type="text" name="title" value="{{ job.title }}">
+
+                <label>Description:</label>
+                <textarea name="description">{{ job.description }}</textarea>
+
+                <label>Salary:</label>
+                <input type="text" name="salary" value="{{ job.salary }}">
+
+                <label>Company ID:</label>
+                <input type="text" name="company_id" value="{{ job.company_id }}">
+
+                <button type="submit">Submit</button>
+            </form>
+            <hr>
+        {% endfor %}
+    {% endif %}
+</body>
+</html>
