@@ -4,10 +4,10 @@
 
 The **Campus Recruitment Management System** is a web-based application designed to streamline and automate the recruitment process on a college campus. Built using **Flask** and **MySQL**, this system allows students, companies, and administrators to manage job postings, applications, interviews, and placements efficiently.
 
-## 👨‍💻 Team Members
+## 👨‍💻 Collaborators
 
-- **Ajjay Adhithya V** – 22BCE1250  
-- **Aadarsh Ramakrishna** – 22BCE1332
+- **Ajjay Adhithya V**  
+- **Aadarsh Ramakrishna**
 
 ## 🧱 Features
 
