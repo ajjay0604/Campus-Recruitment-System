@@ -10,7 +10,6 @@ The **Campus Recruitment Management System** is a web-based application designed
 
 ## 👨‍💻 Collaborators
 
-- **Ajjay Adhithya V**  
 - **Aadarsh Ramakrishna**
 
 ## 🧱 Features
