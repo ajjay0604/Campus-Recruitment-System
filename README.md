@@ -122,3 +122,7 @@ Screenshots :
 
 
 ![image](https://github.com/user-attachments/assets/41809232-b1a2-4a39-a835-e1fb661cf060)
+
+----
+<i>📌 Developed by <b>Ajjay Adhithya V</b> · 🔗 More projects on my <a href="https://github.com/ajjay0604/">GitHub Profile</a></i>
+
