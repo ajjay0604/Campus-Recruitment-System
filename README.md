@@ -3,9 +3,7 @@
 ![HTML](https://img.shields.io/badge/Frontend-HTML-orange?logo=html5&logoColor=white)
 ![CSS](https://img.shields.io/badge/Frontend-CSS-blue?logo=css3&logoColor=white)
 ![Jinja2](https://img.shields.io/badge/Templates-Jinja2-green)
-
 ![MySQL](https://img.shields.io/badge/Database-MySQL-blue?logo=mysql&logoColor=white)
-![OracleSQL](https://img.shields.io/badge/Tools-OracleSQL-red?logo=oracle&logoColor=white)
 ![MySQL Workbench](https://img.shields.io/badge/Tools-MySQL%20Workbench-lightgrey?logo=mysql&logoColor=blue)
 
 # 🎓 Campus Recruitment Management System
