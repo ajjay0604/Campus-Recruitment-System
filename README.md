@@ -1,11 +1,10 @@
+# 🎓 Campus Recruitment Management System
 ![Python](https://img.shields.io/badge/Python-3.9%2B-blue?logo=python&logoColor=white)
 ![Flask](https://img.shields.io/badge/Backend-Flask-black?logo=flask&logoColor=white)
 ![HTML](https://img.shields.io/badge/Frontend-HTML-orange?logo=html5&logoColor=white)
 ![CSS](https://img.shields.io/badge/Frontend-CSS-blue?logo=css3&logoColor=white)
 ![Jinja2](https://img.shields.io/badge/Templates-Jinja2-green)
 ![MySQL](https://img.shields.io/badge/Database-MySQL-blue?logo=mysql&logoColor=white)
-
-# 🎓 Campus Recruitment Management System
 
 ## 📄 Project Report
 
